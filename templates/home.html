@@ -1,0 +1,173 @@
+<html>
+
+<head>
+    <title>Machine Learning Pipeline project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 50%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        label {
+            padding: 12px 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+
+            .col-25,
+            .col-75,
+            input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+
+        h1 {
+            padding: 15px;
+            margin: 25px;
+
+            /* other styling */
+            background-color: #33475b;
+            border-radius: 50px;
+            color: white;
+            font-family: Avenir;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="text-align:center;">Machine Learning Pipeline project</h1>
+    <div class="form">
+        <form action="{{url_for('prediction_data')}}" method="POST">
+            <label for="operation"></label>
+
+            <div class="container">
+                <form action="/action_page.php">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="age">age</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="Age" name="Age" placeholder="Enter your Age..">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="Gender">Select your Gender</label>
+                        </div>
+                        <div class="col-75">
+                            <select id="Gender" name="Gender">
+                                
+                                <option value="0">Female</option>
+                                <option value="1">Male</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="col-25">
+                            <label for="Location">Choose your Location</label>
+                        </div>
+                        <div class="col-75">
+                            <select id="Location" name="Location">
+                                <option value="1">Houston</option>
+                                <option value="2">New York</option>
+                                <option value="3">Los Angeles</option>
+                                <option value="4">Miami</option>
+                                <option value="5">Chicago</option>
+                                
+                            </select>
+                        </div>
+                        
+                    </div>
+                    <div class="form">
+                        <div class="col-25">
+                            <label for="Monthly_Bill">Choose your Monthly_Bill</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="Monthly_Bill" name="Monthly_Bill" placeholder="Enter your Monthly_Bill">
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="form">
+                        <div class="col-25">
+                             <label for="Subscription_Length_Months"> choose your Subscription_Length_Months</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="Subscription_Length_Months" name="Subscription_Length_Months" placeholder="Enter your Subscription_Length_Months">
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="Total_Usage_GB"> choose your Total_Usage_GB</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="Total_Usage_GB" name="Total_Usage_GB" placeholder="enter value">
+                        </div>
+                    </div>
+
+                    
+                    <div class="row" class="center">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+</body>
+
+</html>
